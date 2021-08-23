@@ -1,0 +1,23 @@
+database:
+  mysql-host: localhost
+  mysql-port: 3306
+  mysql-database: synchronus
+  mysql-username: root
+  mysql-password: ''
+
+# The number of seconds to wait after the server starts to begin scrubbing
+scrub-delay: 30
+# The number of seconds between scrubbing passes
+scrub-frequency: 300
+
+# NOTE: Synchronus currently only supports .yml files.
+target-directories:
+  # Path relative to server root to grab data from.
+  "plugins/Essentials/userdata/":
+    table-name: "essentialsusers"
+    # Table columns should correspond with yml file keys; any keys with multiple values or children will be converted to JSON
+    table-columns:
+      "nickname": ""
+      "money": 0
+      "mail": ""
+      "lastlocation": "{'world':'world','x':0,'y':0,'z':0,'yaw':0,'pitch':0}"
